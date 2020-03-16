@@ -7,11 +7,12 @@ import java.awt.event.KeyEvent;
 public class Player {
     private int x = 50;
     private int y = 500;
-    private int speed1 = 10;
+    private int speed1 = 5;
     int mapX = 0;
-    private int speedMap = 2;
+    private int speedMap = 1;
     int t=0;
     boolean b = true;
+    int g=0;
     private Direction playerDirection=Direction.NEXT;
     private KeyEvent e;
 
@@ -30,6 +31,10 @@ public class Player {
         if(key == KeyEvent.VK_S ) {
             playerDirection = Direction.DOWN;
             t=1;
+        }
+
+        if(key == KeyEvent.VK_SPACE){
+            g++;
         }
 
     }
@@ -90,4 +95,3 @@ public class Player {
         return (int)Math.sqrt((this.x+50-x)*(this.x+50-x)+(this.y+50-y)*(this.y+50-y));
     }
 }
-
